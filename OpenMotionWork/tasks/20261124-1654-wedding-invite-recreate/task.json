@@ -1,0 +1,104 @@
+{
+  "taskId": "20261124-1654-wedding-invite-recreate",
+  "title": "格物书咖 · 开业倒计时 15s（参考片字体动画复刻）",
+  "status": "delivered",
+  "createdAt": "2026-11-24T16:54:00+08:00",
+  "updatedAt": "2026-11-24T19:10:00+08:00",
+  "source": {
+    "type": "reference_video",
+    "path": "C:\\Users\\A\\Downloads\\1040g3n0322tveni9ne0g5q3a8lajfr6ndt1sc10 (1).mp4",
+    "sha256": "795735d3b78b31e602fb6d31b4326933d0f69c325e871fc12f611ec3194b56fc",
+    "durationSec": 20.0,
+    "width": 2500,
+    "height": 3332,
+    "fps": 25,
+    "role": "只复刻它的字体动画机制（散点归位/炸散/乱码解码/微浮），不沿用其画面"
+  },
+  "inputs": [
+    {
+      "kind": "plate_video",
+      "path": "01-ref/plate/plate_video.mp4",
+      "origin": "F:\\LiuCan\\Work\\20261123-JMHB\\SP\\视频+2 (2).mp4",
+      "note": "用户底图：手绘水彩书咖室内，834x1112, 60fps, 15.104s，固定机位+局部动态，自带音轨"
+    },
+    {
+      "kind": "packaging_pdf",
+      "path": "01-ref/packaging_20261122.pdf",
+      "origin": "F:\\LiuCan\\Work\\20261123-JMHB\\20261122 动画小视频.pdf",
+      "note": "用户文字包装定稿：4 页 1035x1380，字体 SourceHanSerifVF-ExtraLight + MiSans-Medium，正文色 #585757"
+    }
+  ],
+  "inherits": [],
+  "openmotion": {
+    "projectId": "ea50a421-7814-4841-a1bf-4938604df582",
+    "title": "格物书咖 · 开业倒计时 V2（规格书完整动效）",
+    "currentVersionId": "8bc9ec74-4715-4b07-96f3-cab2e2eac15b",
+    "currentVersionNumber": 2,
+    "expectedRevision": "d939050d91ecd901e967b128b909a59be3427f0fd54884f87e3d2907d4f4c7b4",
+    "canvas": { "width": 1920, "height": 2560, "fps": 30, "durationSec": 15 },
+    "engines": [
+      "引擎1 空间散点收敛 + 双层残影（S1/S2 入场）",
+      "引擎2 右上路灯引力场涡旋炸散（S1/S2 离场）",
+      "引擎3 双轨字符池 80ms 乱码解码（S3 入场）",
+      "引擎4 克制微浮（S4 入场 + 倒计时缓慢升起）"
+    ],
+    "previousProject": {
+      "projectId": "3618c22d-9996-4342-814e-ccedb051657a",
+      "title": "格物书咖 · 开业倒计时 15s 动态海报（V1 简化版）",
+      "note": "用户要求新建 V2 时保留原工程；V1 为无乱码/无旋转抖动的简化版，最新成片见 04-deliver"
+    },
+    "exports": [
+      {
+        "jobId": "c2679ab9-f81b-4869-bf46-bd218ddc4ba6",
+        "note": "v3 当前交付版：四段不同出场（S1 打字机+光标 / S2 散点归位+残影 / S3 微浮淡入 / S4 上浮弹入）；离场 S1/S2 向右上炸散、S3 整组淡出、S4 定格；画布 1920x2560",
+        "file": "data/exports/c2679ab9-f81b-4869-bf46-bd218ddc4ba6/格物书咖 · 开业倒计时 15s 动态海报.mp4",
+        "deliverCopy": "04-deliver/格物书咖_开业倒计时_15s.mp4",
+        "sha256": "f2af97285420fc687853f3a28459b7ccf240642b61316095f3021d8ac5460281",
+        "verified": true,
+        "verification": "1920x2560 / 30fps / 15.000s / 450 帧 / h264+aac 全片解码无误"
+      },
+      {
+        "jobId": "82f90873-0dd9-465d-9131-a7aa97749fa9",
+        "note": "v2.5 四段不同出场但 834x1112",
+        "sha256": "517ac1712b494c37d735d3cd13ea192e487380b2a45f5714fdb8caccdc320e44",
+        "verified": true
+      },
+      {
+        "jobId": "42e3aa1a-b34e-46f0-9cc5-31c2068f6e7b",
+        "note": "v2 全打字机版（834x1112）",
+        "sha256": "167605805d2aea372d79d328b866b788ba5a41bb588fad5fff40ecde0a17e715",
+        "verified": true
+      },
+      {
+        "jobId": "550c00d7-be32-4152-97bf-2b233f1d38f7",
+        "note": "v1 首版：散点/乱码/微浮/上浮（834x1112），乱码机制已按用户要求废弃",
+        "sha256": "30be23c7e65e1014862a70c10482781121cb4cb6c5dc978eb677438151f47d9b",
+        "verified": true
+      }
+    ]
+  },
+  "abandoned": [
+    {
+      "projectId": "e6882c33-2d82-434d-84de-0e31ec3d4ef0",
+      "title": "婚礼电子请柬 · 手绘线稿复刻",
+      "reason": "用户在制作中途换成自有内容（底图视频 + 格物书咖文字包装），该工程未使用，保留在 data/ 不删除"
+    }
+  ],
+  "assets": [
+    { "path": "02-assets/fonts/SourceHanSerifCN-ExtraLight.otf", "note": "正文中文/英文（= 源ノ明朝 VF ExtraLight 静态实例，250）" },
+    { "path": "02-assets/fonts/MiSans-Semibold.otf", "note": "S4 标题与倒计时数字（PDF 用 Medium；Medium 的 TTF 导入 EPERM，改用 Semibold OTF）" },
+    { "path": "03-work/specs/reverse-spec-v1.md", "note": "外部 Agent 输出的 20s 参考片逐帧动画规格（字体动画参数来源）" },
+    { "path": "03-work/tmp/compare_pdf_vs_render.png", "note": "PDF 与成片排版的并排比对" }
+  ],
+  "notes": [
+    "【2026-11-25 00:40 移除字体音效】按用户要求删掉合成的字体特效音轨（<audio id=\"sfx\"> 及 sfx_v2.wav 引用），只保留底图视频自带原声。成片 04-deliver/格物书咖_V2_1440x1920_ae版_无音效.mp4（49.79MB / 1440x1920 / 24fps / 16.75s / 402帧 / aac 底图原声）。音效合成脚本仍保留在 03-work/scripts/make_sfx.py，需要时可重新接入。",
+    "【2026-11-25 00:25 ae 版交付】底图换成用户新视频 视频ae.mp4（1440x1920 / 24fps / 16.750s / 402帧 / 含音轨），开头比原版多 1.75s。按用户要求「字幕以结尾对齐」：动画整体后移 1.75s（typography scene host data-start=1.75），root duration=16.75，画布从 1920x2560 改为 1440x1920（= 新视频原生分辨率，stage scale 2.3021583→1.7266187），fps 30→24。验证：1.0s 延长段无字、3.0s 起有字、16.6s 定格仍在；静止窗口帧间差异 max 7~12、px>8 0~52（无抖动）。",
+    "【2026-11-25 00:00 导出抖动 bug 已修复并归档到 AGENTS.md §6.1】三个叠加原因：①Studio/预览会话往 index.html 的 typography scene host 写了 data-hidden=\"\"，整层渲染被跳过（一度导致误判为「抖动已修复」）；②文字层的 GPU 合成提示（will-change / backface-visibility / GSAP force3D / -webkit-font-smoothing / text-rendering）在逐帧截图下每帧重栅格化字形 → 边缘亚像素抖动，实测 px>8 从 11208 降到 16；③mix-blend-mode: multiply + 动态底图 → 文字颜色逐帧随背景变化。",
+    "V2 工程 projectId=ea50a421-7814-4841-a1bf-4938604df582（规格书完整四套引擎 + 底图 ae）；V1 简化版工程 3618c22d 完整保留未动。",
+    "排版已按 PDF 坐标量化对齐：文字块 bbox 偏差 dx/dy ≤ 2px、宽度差 ≤ 3%。",
+    "PDF 实测字重为 ExtraLight(250)；若改要 regular(400)，只需在 compositions/typography.html 把 @font-face 换成 regular 字体文件并调 font-weight。",
+    "倒计时数字「3」在 PDF 里是私有字形(U+F63E, 91.8pt)，本工程用 MiSans Semibold 74px 近似。",
+    "参考片四套机制里，本片用到了：S1 散点归位+向右上炸散、S2 乱码解码、S3 微浮淡入、S4 上浮+大数字弹入。",
+    "画布等于底图原生 834x1112；如需高清可把 canvas 放大到 1251x1668 重出（文字为矢量、会更清晰，底图会略软）。"
+  ]
+}

@@ -1,0 +1,3 @@
+[submodule "OpenMotion"]
+	path = OpenMotion
+	url = https://github.com/nexu-io/openmotion.git

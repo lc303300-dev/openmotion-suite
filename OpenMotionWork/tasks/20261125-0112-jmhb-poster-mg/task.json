@@ -1,0 +1,50 @@
+{
+  "taskId": "20261125-0112-jmhb-poster-mg",
+  "title": "保利 POLY RARE CENTRO「双本部名校为邻」9:16 动效 6s",
+  "createdAt": "2026-11-25T01:12:00+08:00",
+  "updatedAt": "2026-11-25T02:05:00+08:00",
+  "status": "previewed",
+  "source": {
+    "type": "poster-pdf",
+    "path": "F:\\LiuCan\\Work\\20261123-JMHB\\画板 16(1).pdf",
+    "page": "1/1",
+    "sizePt": [
+      720,
+      1280
+    ],
+    "scaleToProject": 1.5
+  },
+  "spec": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "durationSec": 6.0,
+    "audio": "none"
+  },
+  "openmotion": {
+    "projectId": "2dad4cfa-7fe5-44e3-bc84-84ab49686e9a",
+    "supersededProjects": [
+      "d8db7db0-bd0a-4ce6-93c3-3d9f9545d06f",
+      "e55c4123-e610-470d-a5d5-54771d18ea3f",
+      "3f3bb58d-71e2-4498-8638-abef33c6dd8e"
+    ],
+    "projectType": "legacy-import",
+    "versionId": "fd6eaff7-3c13-4084-b76b-9893b4146ed7",
+    "versionNumber": 2,
+    "revision": "843bacf131907e5e24fd243f60350a346889060b2fa58433b8a20603cf40cd81",
+    "previewUrl": "http://localhost:4173/?session=fe694a3d-1abf-41df-a79c-4b7a3bc77f38&project=2dad4cfa-7fe5-44e3-bc84-84ab49686e9a&embed=1&tracking_context=1dbec3c5-91d0-4c71-b5cd-edd7d361ada2#project=2dad4cfa-7fe5-44e3-bc84-84ab49686e9a",
+    "title": "保利 POLY RARE · 双本部名校为邻（6s 9:16）v3 优雅版"
+  },
+  "exports": [],
+  "inherits": [],
+  "notes": [
+    "素材与字体全部从源 PDF 提取，未重新生成。",
+    "版面按 PDF 图像变换矩阵 1:1 复刻（含斜切），逐字坐标取自 PDF 文本 trace。",
+    "POLY RARE / CENTRO 使用提取的 CFF 字形轮廓内联 SVG。",
+    "中文 HarmonyOS Sans SC 子集按 PDF ToUnicode 重建 cmap 后导入。",
+    "静态帧与 PDF 3x 渲染的平均像素差 4.86/255（文字抗锯齿与阴影为主）。",
+    "无音轨；用户可自行在 Studio 预览，不强制出片。",
+    "v3：动效语言改为高端奢侈品——去掉 elastic 回弹/落地压扁/power4 硬砸；照片 0.84s power2.out 缓落，起点仅 1.03-1.05；文案逐字只动透明度；印章 1.075→1 无回弹。",
+    "按新规则默认不出片，交付形态为 Studio 预览链接。"
+  ]
+}

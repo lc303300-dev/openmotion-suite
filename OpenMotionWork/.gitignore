@@ -1,0 +1,57 @@
+# ============================================================
+# OpenMotionWork：只提交「工作区骨架 + 任务台账 + 脚本 + 经验文档」
+# 工程数据、运行时、客户素材、成片、中间产物一律不入库
+# ============================================================
+
+# ---------- 运行时（本地专属，重建即可） ----------
+.openmotion-home/
+.dsh/
+.dsh-media-private/
+node_modules/
+.hyperframes/
+__pycache__/
+*.pyc
+
+# ---------- OpenMotion 工程数据（唯一真源在本机 data\） ----------
+data/
+
+# ---------- 任务区：默认全排除，只放行台账、脚本、复盘 ----------
+tasks/*/*
+!tasks/*/00-brief.md
+!tasks/*/task.json
+
+# 03-work 目录先放行，再只留脚本与交接文档（git 不会深入已被排除的目录）
+!tasks/*/03-work/
+tasks/*/03-work/*
+!tasks/*/03-work/*.py
+!tasks/*/03-work/*.ps1
+!tasks/*/03-work/*.md
+
+# 跨任务复用的参考与模板整目录保留（含第三方 vendor 除外）
+!tasks/_reference/**
+tasks/_reference/hf2ae/
+!tasks/_archive/**
+!tasks/_template/**
+
+# ---------- 媒体与工程产物（体积大、含客户素材） ----------
+*.mp4
+*.mov
+*.m4a
+*.wav
+*.aep
+*.zip
+*.psd
+*.ai
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.ttf
+*.otf
+
+# ---------- 杂项 ----------
+*.log
+*.bak-*
+.tmp-*/
+Thumbs.db
+desktop.ini

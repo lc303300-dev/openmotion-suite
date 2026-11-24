@@ -1,0 +1,26 @@
+{
+  "taskId": "<YYYYMMDD-HHMM-slug>",
+  "title": "<任务标题>",
+  "status": "planning",
+  "createdAt": "<YYYY-MM-DDTHH:MM:SS+08:00>",
+  "updatedAt": "<YYYY-MM-DDTHH:MM:SS+08:00>",
+  "source": {
+    "type": "reference_video | brief | template | existing_project",
+    "path": "<本地绝对路径或 URL>",
+    "sha256": "<源文件 sha256，可为 null>",
+    "durationSec": null,
+    "width": null,
+    "height": null,
+    "fps": null
+  },
+  "inherits": [],
+  "openmotion": {
+    "projectId": null,
+    "title": null,
+    "currentVersionId": null,
+    "expectedRevision": null,
+    "exports": []
+  },
+  "assets": [],
+  "notes": []
+}
