@@ -91,8 +91,9 @@ const usage = `OpenMotion Suite bootstrap
   node bootstrap.mjs --rebind [--home DIR] [--data-dir DIR]
       已从旧机器复制 .openmotion-home，把这个路径重写成当前机器的。
 
-  node bootstrap.mjs [--home DIR] [--tag v0.2.1] [--tgz FILE] [--dsh FILE] [--profile desktop]
+  node bootstrap.mjs [--home DIR] [--tag v0.2.1] [--tgz FILE] [--harness DIR] [--dsh FILE] [--profile desktop]
       没有运行时，从上游 tag 构建 npm 单机包并安装（需要 git + node>=22.18 + 网络）。
+      --harness 指向含 "DeepSeek Harness.exe" 的目录，installer 通过它调用宿主。
 
   node bootstrap.mjs --dry-run ...
       只打印将要改动的字段。
@@ -338,9 +339,21 @@ async function buildFromRepo(opts) {
     console.log(`复用已有 tgz：${tgz}`);
   }
 
+  // installer 通过 dsh-cli-launcher.mjs 调宿主 CLI；launcher 又需要 dsh-harness.json。
+  // 所以必须先把 Harness 位置写下来，否则新机器上 setup 会因为 launcher 找不到 exe 而失败。
+  const launcherFile = path.join(path.dirname(opts.home), 'dsh-cli-launcher.mjs');
+  if (opts.harness) {
+    await writeHarnessConfig(launcherFile, opts.harness, { dryRun: false });
+    console.log(`已写入 Harness 位置：${path.join(path.dirname(opts.home), 'dsh-harness.json')}`);
+  }
+  const dsh = opts.dsh ?? (existsSync(launcherFile) ? launcherFile : null);
+  if (!dsh) {
+    throw new Error('缺少宿主入口：传 --harness "<DeepSeek Harness 安装目录>"，或显式传 --dsh <dsh-cli-launcher.mjs 绝对路径>');
+  }
+  if (!existsSync(dsh)) throw new Error(`--dsh 指向的文件不存在：${dsh}`);
+
   const args = ['--yes', '--package', tgz, 'openmotion', 'setup', '--host', 'deepseek',
-    '--home', opts.home, '--data-dir', opts.dataDir, '--profile', opts.profile];
-  if (opts.dsh) args.push('--dsh', opts.dsh);
+    '--home', opts.home, '--data-dir', opts.dataDir, '--profile', opts.profile, '--dsh', dsh];
   run('npx', args);
   run('npx', ['--yes', '--package', tgz, 'openmotion', 'prepare', '--home', opts.home]);
 

@@ -23,9 +23,11 @@ openmotion-suite/
 
 ```bash
 git clone --recurse-submodules <本仓库地址> openmotion-suite
-cd openmotion-suite
-node bootstrap.mjs --profile desktop
+cd openmotion-suite/OpenMotionWork
+node ../bootstrap.mjs --harness "<DeepSeek Harness 安装目录>"
 ```
+
+在 `OpenMotionWork/`（窗口工作区根）里跑即可：默认把运行时装到当前目录的 `.openmotion-home/`、工程数据放 `data/`，不依赖脚本在哪、也不依赖谁家的盘符。`--harness` 指向包含 `DeepSeek Harness.exe` 的那一层目录，installer 要靠它调用宿主 CLI。
 
 `bootstrap.mjs` 负责把运行时装起来，因为**没有任何一条命令能直接装着走**：
 
