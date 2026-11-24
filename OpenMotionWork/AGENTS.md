@@ -1,14 +1,18 @@
 # OpenMotionWork · 视频工作区专用指令
 
-本目录 `F:\LiuCan\AI\DSH\OpenMotionWork` 是 **OpenMotion 0.2.1 单机版**的视频制作工作区。
+本目录（当前工作区根）是 **OpenMotion 0.2.1 单机版**的视频制作工作区。
 在此目录新开的对话，直接按本文件执行：**不要重新调研安装方式、不要重装、不要装 Docker**。
+
+> **路径口径**：本文所有路径都相对于本工作区根目录，不写死任何机器盘符。
+> 每台机器的绝对路径由 `bootstrap.mjs` 写入 `.openmotion-home/install.json` 与 `dsh-harness.json`；
+> 要核对实际位置，读这两个文件，或在 DSH 里调 `openmotion_get_project` 看返回的 `dataDirectory`。
 
 配套目录：
 
 | 目录 | 作用 |
 | --- | --- |
-| `F:\LiuCan\AI\DSH\OpenMotionWork` | **本工作区**：OpenMotion 运行时 + 工程数据 + 本指令 |
-| `F:\LiuCan\AI\DSH\OpenMotion` | **只读**：OpenMotion 上游源码副本，`git` 对齐 `origin/main`。仅供查实现，不参与运行 |
+| `OpenMotionWork/`（本工作区根） | **本工作区**：OpenMotion 运行时 + 工程数据 + 本指令 |
+| `../OpenMotion/`（与本工作区同级） | **只读**：OpenMotion 上游源码副本（git submodule）。仅供查实现，不参与运行 |
 
 ---
 
@@ -26,8 +30,8 @@
 | 宿主 profile | DSH `desktop` |
 | 宿主 CLI 启动器 | `dsh-cli-launcher.mjs`（重装/升级必需，**勿删**） |
 
-自检一条就够：`openmotion_get_project` 返回的 `dataDirectory` 必须等于
-`F:\LiuCan\AI\DSH\OpenMotionWork\data`。
+自检一条就够：`openmotion_get_project` 返回的 `dataDirectory` 必须等于本工作区下的 `data\` 目录
+（绝对路径以 `bootstrap.mjs` 写入的 `.openmotion-home/install.json` 为准）。
 不等于就说明 MCP 连到了别的安装，**停下来报告，不要写工程**。
 
 ---
@@ -229,7 +233,7 @@ PDF 里有精确的变换矩阵、逐字坐标和内嵌字体，搬过来误差�
 
 - **视频工程只在 `data\`**，由 MCP 管理，不要手改。
 - `.openmotion-home\` 是托管运行时，**不要手改**（除第 6 节已知修复）。
-- `F:\LiuCan\AI\DSH\OpenMotion` 是**只读源码副本**：不要在里面装东西、不要 `git clean`、不要当工作目录。
+- `../OpenMotion/`（与本工作区同级的 submodule）是**只读源码副本**：不要在里面装东西、不要 `git clean`、不要当工作目录。
 - 临时文件（抽帧、对比图）放 `data\_scratch\<taskId>\`，任务一结束即可删；任务产物不放这里（见 §9）。
 - `dsh-cli-launcher.mjs` 不要删，重装需要它。
 
